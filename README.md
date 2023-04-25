@@ -23,6 +23,7 @@ def database_finder(mart_name, file_name_2):
     list_2.to_csv(file_name_2, index=False)
 ```
 
+```Python
 def filters_attributes(species, file_1, file_2):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
     list_1 = species_dataset.filters
@@ -34,8 +35,9 @@ def filters_attributes(species, file_1, file_2):
     with open(file_2, 'w') as f:
         for item in list_2.keys():
             f.write("%s,%s\n" % (item, list_2[item]))
+```  
 
-
+```Python
 def dataset_retrieve(species, chrom, file_name):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
     species_query = species_dataset.query(
@@ -45,8 +47,9 @@ def dataset_retrieve(species, chrom, file_name):
     filtered_set = species_query.dropna()
     filtered_set.columns = filtered_set.columns.str.replace(' ', '_')
     filtered_set.to_csv(file_name, index=False)
+```
 
-
+```Python
 def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
     species_dataset = Dataset(name=species_1, host='http://www.ensembl.org')
     gene_list_query = species_dataset.query(
@@ -55,8 +58,9 @@ def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
     filtered_set = gene_list_query.dropna()
     filtered_set.columns = filtered_set.columns.str.replace(' ', '_')
     filtered_set.to_csv(file_name, index=False)
+```
 
-
+```Python
 def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
     dataset = pd.read_csv(species)
     genes = pd.read_csv(gene_list)
@@ -66,8 +70,9 @@ def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
     list_2 = dataset_query['Gene_name'].unique()
     genes_filter = genes.query("Gene_name in @list_2")
     genes_filter.to_csv(filter_gene, index=False)
+```
 
-
+```Python
 def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, file_name_2):
     dataset = pd.read_csv(species)
     genes = pd.read_csv(gene_list)
@@ -77,22 +82,25 @@ def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, fil
     list_2 = dataset_query['Gene_stable_ID'].unique()
     dataset_query_2 = genes[genes[column_name].isin(list_2)]
     dataset_query_2.to_csv(file_name_2, index=False)
+```
 
-
+```Python
 def dataset_1_final_filter(species, gene_list, file_name):
     dataset = pd.read_csv(species)
     genes = pd.read_csv(gene_list)
     list_1 = list(genes['Gene_name'].unique())
     dataset_query = dataset.query("Gene_name in @list_1")
     dataset_query.to_csv(file_name, index=False)
+```
 
-
+```Python
 def gene_ontology_filter(file, go_term, go_name_filter):
     filtered_species = pd.read_csv(file)
     query = filtered_species[filtered_species['GO_term_name'].isin([go_term])]
     query.to_csv(go_name_filter, index=False)
+```
 
-
+```Python
 def ref_seq_list(file_name, gene, column_name, name):
     file = pd.read_csv(file_name)
     filtered = file.loc[:, [column_name, "Gene_name"]]
@@ -100,7 +108,7 @@ def ref_seq_list(file_name, gene, column_name, name):
     list = [gene]
     desired_gene = filtered.query("Gene_name in @list")
     desired_gene.to_csv(name, index=False)
-
+```
 
 def ref_seq_sequence(email, db_type, id, file_name):
     Entrez.email = email
