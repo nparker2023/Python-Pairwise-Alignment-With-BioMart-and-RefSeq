@@ -6,19 +6,20 @@ The following tutorial gives a step by step guide on how to successfully use the
 
 ### Requirements
 
-The following packages are r
+The following packages are required for this pipeline.
 
 ```Python
+# Install packages
 !pip install pybiomart --quiet
 !pip install biopython --quiet
 ```
 ```Python
+# Load packages
 from pybiomart import Dataset, Server
 import pandas as pd
 from Bio import Entrez, Align, SeqIO
 from Bio.Align import substitution_matrices
 ```
-The following lines for this block of code will load the packages that are required for coding. The use of import allows for an installed package to be accessed and used within the code. The use of "as" allows for the package to be given a nickname or shortened. In this example, the package pandas is shortened to pd. The use of "from" followed by import allows for specified subpackages to be accessed from a specified package. If numerous subpackages are to be accessed, then each one can be listed after import and separated with a comma.
 
 ```Python
 def mart_finder(file_name_1):
