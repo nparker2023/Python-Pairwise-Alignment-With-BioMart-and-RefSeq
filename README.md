@@ -20,6 +20,7 @@ import pandas as pd
 from Bio import Entrez, Align, SeqIO
 from Bio.Align import substitution_matrices
 ```
+### Find All Marts
 
 ```Python
 def mart_finder(file_name_1):
@@ -29,6 +30,7 @@ def mart_finder(file_name_1):
 ```
 The following lines create a function that will return a csv that contains a list of all the possible BioMart Ensembl marts. The function has one argument. The argument file_name_1 refers to the name of the csv file for all possible marts. The list of marts was saved as list_1 and converted to a csv file. The list of all possible marts can be used to determine what mart will be entered for the mart_name argument of the database_finder function.
 
+### BioMart Ensembl Databases 
 ```Python
 def database_finder(mart_name, file_name_2):
     server = Server(host='http://www.ensembl.org')
@@ -37,6 +39,8 @@ def database_finder(mart_name, file_name_2):
     list_2.to_csv(file_name_2, index=False)
 ```
 The following lines create a function that will return a csv that contains a list of all the possible BioMart Ensembl databases. The function has two arguments. The first argument mart_name refers to the name of the selected mart. This mart can be found from the list that was created from the mart_finder function. The second argument file_name_2 refers to the name of the csv file for possible datasets. The list of datasets is saved as list_2 and converted to a csv file. The list of all possible databases can be used to determine what species will be entered for the species argument of the dataset_retrieve function.
+
+### Find Filters and Attributes for an 
 
 ```Python
 def filters_attributes(species, file_1, file_2):
