@@ -4,12 +4,14 @@
 
 The following tutorial gives a step by step guide on how to successfully use the pipeline in order to get the desired results. The Python script without the explanations has also been provided and can be found above.
 
+### Requirements
+
+The following packages are r
+
 ```Python
 !pip install pybiomart --quiet
 !pip install biopython --quiet
 ```
-The following lines for this block of code install packages that aren't already pre-installed in the Google Collab Python notebook. This is done by using the code "!pip install", which is then followed by the specified package. The use of "--quiet" prevents the code block from outputting any information related to the package installation. However, if some other type of IDE is being used, this code does not need to be used. Due to this, the process of installing packages may vary depending on the IDE being used.
-
 ```Python
 from pybiomart import Dataset, Server
 import pandas as pd
