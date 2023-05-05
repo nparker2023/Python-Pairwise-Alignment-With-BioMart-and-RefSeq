@@ -1,10 +1,10 @@
 # Python Pipeline Tutorial to Query and Manipulate Data from BioMart and RefSeq in Order to Perform a Pairwise Alignment Between Two Species 
 
-### Overview
+## Overview
 
 The following tutorial gives a step by step guide on how to successfully use the pipeline in order to get the desired results. The Python script without the explanations has also been provided and can be found above.
 
-### Requirements
+## Requirements
 
 The following packages are required for this pipeline.
 
@@ -20,7 +20,7 @@ import pandas as pd
 from Bio import Entrez, Align, SeqIO
 from Bio.Align import substitution_matrices
 ```
-### Find All Marts
+## Find All Marts
 
 ```Python
 def mart_finder(file_name_1):
@@ -29,7 +29,7 @@ def mart_finder(file_name_1):
     list_1.to_csv(file_name_1, index=False)
 ```
 
-### Find All BioMart Ensembl Databases 
+## Find All BioMart Ensembl Databases 
 ```Python
 def database_finder(mart_name, file_name_2):
     server = Server(host='http://www.ensembl.org')
@@ -38,7 +38,7 @@ def database_finder(mart_name, file_name_2):
     list_2.to_csv(file_name_2, index=False)
 ```
 
-### Find Filters and Attributes For a Specific BioMart Ensembl Database
+## Find Filters and Attributes For a Specific BioMart Ensembl Database
 
 ```Python
 def filters_attributes(species, file_1, file_2):
@@ -54,7 +54,7 @@ def filters_attributes(species, file_1, file_2):
             f.write("%s,%s\n" % (item, list_2[item]))
 ```  
 
-### Gather Data 
+## Gather Data 
 
 ```Python
 def dataset_retrieve(species, chrom, file_name):
@@ -68,7 +68,6 @@ def dataset_retrieve(species, chrom, file_name):
     filtered_set.to_csv(file_name, index=False)
 ```
 
-
 ```Python
 def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
     species_dataset = Dataset(name=species_1, host='http://www.ensembl.org')
@@ -80,7 +79,7 @@ def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
     filtered_set.to_csv(file_name, index=False)
 ```
 
-### Filter Data 
+## Filter Data 
 
 ```Python
 def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
@@ -94,8 +93,6 @@ def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
     genes_filter.to_csv(filter_gene, index=False)
 ```
 
-
-
 ```Python
 def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, file_name_2):
     dataset = pd.read_csv(species)
@@ -108,7 +105,6 @@ def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, fil
     dataset_query_2.to_csv(file_name_2, index=False)
 ```
 
-
 ```Python
 def dataset_1_final_filter(species, gene_list, file_name):
     dataset = pd.read_csv(species)
@@ -118,7 +114,7 @@ def dataset_1_final_filter(species, gene_list, file_name):
     dataset_query.to_csv(file_name, index=False)
 ```
 
-### Filter Data By Gene Ontology
+## Filter Data By Gene Ontology
 
 ```Python
 def gene_ontology_filter(file, go_term, go_name_filter):
@@ -127,7 +123,7 @@ def gene_ontology_filter(file, go_term, go_name_filter):
     query.to_csv(go_name_filter, index=False)
 ```
 
-# 
+## Select Specified RefSeq
 ```Python
 def ref_seq_list(file_name, gene, column_name, name):
     file = pd.read_csv(file_name)
@@ -138,7 +134,6 @@ def ref_seq_list(file_name, gene, column_name, name):
     desired_gene.to_csv(name, index=False)
 ```
 
-### Select Specified RefSeq
 ```Python
 def ref_seq_sequence(email, db_type, id, file_name):
     Entrez.email = email
@@ -149,14 +144,13 @@ def ref_seq_sequence(email, db_type, id, file_name):
     net_handle.close()
 ```
 
+## Perform Pariwise Alignment
 
 ```Python
 def matrix():
     matrix_list = substitution_matrices.load()
     print('The following pre-defined matrices of', ', '.join(matrix_list), 'are available.')
 ```
-
-### Perform Pariwise Alignment
 
 ```Python
 def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
@@ -169,7 +163,6 @@ def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
     alignments = aligner.align(sequence_1, sequence_2)
     print("There are", len(alignments), "possible alignments.")
 ```
-
 
 ```Python
 def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, alignment):
@@ -190,7 +183,7 @@ def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, 
 ```
 
 
-### Function Arguments
+## Function Arguments
 
 ```Python
 # Functions are called to access pipeline 
