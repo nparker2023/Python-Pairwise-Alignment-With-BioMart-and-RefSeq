@@ -22,6 +22,8 @@ from Bio.Align import substitution_matrices
 ```
 ## Find All Marts
 
+The type of mart must be specfied in order to access available databases.
+
 ```Python
 def mart_finder(file_name_1):
     server = Server(host='http://www.ensembl.org')
