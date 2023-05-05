@@ -20,19 +20,24 @@ import pandas as pd
 from Bio import Entrez, Align, SeqIO
 from Bio.Align import substitution_matrices
 ```
-## Find All Marts
+## Selecting Marts
 
-The type of mart must be specfied in order to access available databases.
+Marts are used to access certain databases within BioMart Ensembl.
 
 ```Python
+# Finds all possible marts
 def mart_finder(file_name_1):
     server = Server(host='http://www.ensembl.org')
     list_1 = server.list_marts()
     list_1.to_csv(file_name_1, index=False)
 ```
 
-## Find All BioMart Ensembl Databases 
+## BioMart Ensembl Databases 
+
+Specifying the mart type allows for different 
+
 ```Python
+# Finds all BioMart Ensembl databases based on specified mart
 def database_finder(mart_name, file_name_2):
     server = Server(host='http://www.ensembl.org')
     mart = server[mart_name]
