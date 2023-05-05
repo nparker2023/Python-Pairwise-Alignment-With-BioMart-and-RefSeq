@@ -54,7 +54,7 @@ def filters_attributes(species, file_1, file_2):
             f.write("%s,%s\n" % (item, list_2[item]))
 ```  
 
-# Query Data From a Specific BioMart Ensembl Database
+### Gather Data 
 
 ```Python
 def dataset_retrieve(species, chrom, file_name):
@@ -80,6 +80,7 @@ def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
     filtered_set.to_csv(file_name, index=False)
 ```
 
+### Filter Data 
 
 ```Python
 def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
@@ -117,6 +118,7 @@ def dataset_1_final_filter(species, gene_list, file_name):
     dataset_query.to_csv(file_name, index=False)
 ```
 
+### Filter Data By Gene Ontology
 
 ```Python
 def gene_ontology_filter(file, go_term, go_name_filter):
@@ -125,7 +127,7 @@ def gene_ontology_filter(file, go_term, go_name_filter):
     query.to_csv(go_name_filter, index=False)
 ```
 
-
+# 
 ```Python
 def ref_seq_list(file_name, gene, column_name, name):
     file = pd.read_csv(file_name)
@@ -136,7 +138,7 @@ def ref_seq_list(file_name, gene, column_name, name):
     desired_gene.to_csv(name, index=False)
 ```
 
-
+### Select Specified RefSeq
 ```Python
 def ref_seq_sequence(email, db_type, id, file_name):
     Entrez.email = email
@@ -154,6 +156,7 @@ def matrix():
     print('The following pre-defined matrices of', ', '.join(matrix_list), 'are available.')
 ```
 
+### Perform Pariwise Alignment
 
 ```Python
 def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
