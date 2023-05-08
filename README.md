@@ -2,7 +2,7 @@
 
 ## Overview
 
-The following tutorial gives a step by step guide on how to successfully use the pipeline in order to get the desired results. The the script for this pipeline can be found in Google Colab 
+The following tutorial gives a step by step guide on how to successfully use the pipeline in order to get the desired results. The the script for this pipeline can be found in Google Colab as a ipynb document by clicking on the badge. The script has been provided as a py document and can be found above.
 
 ## Requirements
 
