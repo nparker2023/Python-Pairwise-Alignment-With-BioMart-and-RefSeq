@@ -2,19 +2,17 @@
 
 ## Overview
 
-The following tutorial gives a step by step guide on how to successfully use the pipeline in order to get the desired results. The the script for this pipeline can be found in Google Colab as a ipynb document by clicking on the badge. The script has been provided as a py document and can be found above.
+The following tutorial gives a step by step guide on how to successfully use the pipeline in order to get the desired results. The the script for this pipeline can be found in Google Colab as a .ipynb document by clicking on the badge. The script has been provided as a .py document and can be found above.
 
 ## Requirements
 
-The following packages are required for this pipeline.
+The following packages are required in order for this pipeline to run successfully.
 
 ```Python
-# Install packages
 !pip install pybiomart --quiet
 !pip install biopython --quiet
 ```
 ```Python
-# Load packages
 from pybiomart import Dataset, Server
 import pandas as pd
 from Bio import Entrez, Align, SeqIO
@@ -22,10 +20,9 @@ from Bio.Align import substitution_matrices
 ```
 ## Selecting Marts
 
-Find all marts and select one of interest. 
+A mart must be selected in order to access the BioMart Ensembl databases. Find all marts and select one of interest. 
 
 ```Python
-# Finds all possible marts
 def mart_finder(file_name_1):
     server = Server(host='http://www.ensembl.org')
     list_1 = server.list_marts()
@@ -40,7 +37,6 @@ When this function is called, it should output a file that looks similar to the 
 Select a mart to access all its BioMart Ensembl databases.
 
 ```Python
-# Finds all BioMart Ensembl databases based on specified mart
 def database_finder(mart_name, file_name_2):
     server = Server(host='http://www.ensembl.org')
     mart = server[mart_name]
@@ -222,8 +218,9 @@ def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, 
 
 ## Function Arguments
 
+ALl of the functtions are called in order to implement the pipeline and gets the results that are mentioned above.
+
 ```Python
-# Functions are called to access pipeline 
 if __name__ == '__main__':
     mart_finder('mart_list.csv')
     database_finder('ENSEMBL_MART_ENSEMBL', 'database_list.csv')
