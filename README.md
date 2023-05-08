@@ -163,7 +163,7 @@ def ref_seq_list(file_name, gene, column_name, name):
     desired_gene = filtered.query("Gene_name in @list")
     desired_gene.to_csv(name, index=False)
 ```
-Retrieve RefSeq sequences.
+Retrieve desired RefSeq sequences.
 
 ```Python
 def ref_seq_sequence(email, db_type, id, file_name):
