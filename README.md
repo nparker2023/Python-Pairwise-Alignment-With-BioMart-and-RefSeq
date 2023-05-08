@@ -131,6 +131,8 @@ def dataset_1_final_filter(species, gene_list, file_name):
 
 ## Filter Data By Gene Ontology
 
+Filter species datasets by gene ontology term.
+
 ```Python
 def gene_ontology_filter(file, go_term, go_name_filter):
     filtered_species = pd.read_csv(file)
@@ -139,6 +141,9 @@ def gene_ontology_filter(file, go_term, go_name_filter):
 ```
 
 ## Select Specified RefSeq
+
+Filter species datasets to get a gene of interest. 
+
 ```Python
 def ref_seq_list(file_name, gene, column_name, name):
     file = pd.read_csv(file_name)
@@ -148,6 +153,7 @@ def ref_seq_list(file_name, gene, column_name, name):
     desired_gene = filtered.query("Gene_name in @list")
     desired_gene.to_csv(name, index=False)
 ```
+Retrieve RefSeq sequences.
 
 ```Python
 def ref_seq_sequence(email, db_type, id, file_name):
@@ -161,11 +167,15 @@ def ref_seq_sequence(email, db_type, id, file_name):
 
 ## Perform Pariwise Alignment
 
+Views all available substitution matrices. 
+
 ```Python
 def matrix():
     matrix_list = substitution_matrices.load()
     print('The following pre-defined matrices of', ', '.join(matrix_list), 'are available.')
 ```
+
+Find all possible pairwise alignment variations.
 
 ```Python
 def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
@@ -178,6 +188,8 @@ def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
     alignments = aligner.align(sequence_1, sequence_2)
     print("There are", len(alignments), "possible alignments.")
 ```
+
+Perform pairwise alignment.
 
 ```Python
 def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, alignment):
