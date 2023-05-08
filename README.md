@@ -22,7 +22,7 @@ from Bio.Align import substitution_matrices
 ```
 ## Selecting Marts
 
-Marts are used to access certain databases within BioMart Ensembl.
+Find all marts and select one of interest. 
 
 ```Python
 # Finds all possible marts
@@ -34,7 +34,7 @@ def mart_finder(file_name_1):
 
 ## BioMart Ensembl Databases 
 
-Specifying the mart type allows for different 
+Select a mart to access all its BioMart Ensembl databases.
 
 ```Python
 # Finds all BioMart Ensembl databases based on specified mart
@@ -46,6 +46,8 @@ def database_finder(mart_name, file_name_2):
 ```
 
 ## Find Filters and Attributes For a Specific BioMart Ensembl Database
+
+Get all of the available attributes and filters for a particular species dataset.
 
 ```Python
 def filters_attributes(species, file_1, file_2):
@@ -63,6 +65,8 @@ def filters_attributes(species, file_1, file_2):
 
 ## Gather Data 
 
+Query data for a particular species dataset.
+
 ```Python
 def dataset_retrieve(species, chrom, file_name):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
@@ -74,6 +78,8 @@ def dataset_retrieve(species, chrom, file_name):
     filtered_set.columns = filtered_set.columns.str.replace(' ', '_')
     filtered_set.to_csv(file_name, index=False)
 ```
+
+Find all the homologs for the two species of interest.
 
 ```Python
 def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
@@ -87,6 +93,8 @@ def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
 ```
 
 ## Filter Data 
+
+Filter the datasets so that they contain the homolog list, the first species dataset, and the second species datastest are reflective of one another.
 
 ```Python
 def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
