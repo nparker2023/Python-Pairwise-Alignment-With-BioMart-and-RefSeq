@@ -6,7 +6,7 @@ The following tutorial gives a step by step guide on how to successfully use the
 
 ## Requirements
 
-The following packages are required in order for this pipeline to run successfully.
+Step 1: The following packages are required in order for this pipeline to run successfully.
 
 ```Python
 !pip install pybiomart --quiet
@@ -20,7 +20,7 @@ from Bio.Align import substitution_matrices
 ```
 ## Selecting Marts
 
-A mart must be selected in order to access the BioMart Ensembl databases. Find all marts and select one of interest. 
+Step 2: A mart must be selected in order to access the BioMart Ensembl databases. All of the availible marts can be accessed as a list and saved to file. 
 
 ```Python
 def mart_finder(file_name_1):
@@ -34,7 +34,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## BioMart Ensembl Databases 
 
-Select a mart to access all its BioMart Ensembl databases.
+Step 3: After sellecting a particular mart, it can be used to access all its corresponding BioMart Ensembl databases.
 
 ```Python
 def database_finder(mart_name, file_name_2):
@@ -48,9 +48,10 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Find Filters and Attributes For a Specific BioMart Ensembl Database
 
-Get all of the available attributes and filters for a particular species dataset.
+Step 4: All of the datasets have differing attributtes and filters which can be used to query specific information. All of the available filters and attributes for a particular species dataset can be accessed and saved to files.
 
 ```Python
+# Filters and attributes get their own file
 def filters_attributes(species, file_1, file_2):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
     list_1 = species_dataset.filters
@@ -69,9 +70,10 @@ When this function is called, it should output files that look similar to the on
 
 ## Gather Data 
 
-Query data for a particular species dataset.
+Step 5: The attributes and filters for a dataset can be used to narrow down to get specific queries. The queries for a particular species dataset can be saved as a file.
 
 ```Python
+# In order to work with the data later on, all blanks must be removed and column names must be written in a way that makes them easy to manipulate.
 def dataset_retrieve(species, chrom, file_name):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
     species_query = species_dataset.query(
@@ -83,7 +85,10 @@ def dataset_retrieve(species, chrom, file_name):
     filtered_set.to_csv(file_name, index=False)
 ```
 
-Find all the homologs for the two species of interest.
+When this function is called, it should output a file that looks similar to the one below.
+
+
+Step 6: Find all the homologs for the two species of interest.
 
 ```Python
 def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
