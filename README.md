@@ -2,7 +2,7 @@
 
 ## Overview
 
-The following tutorial gives a step by step guide on how to successfully use the pipeline in order to get the desired results. The Python script without the explanations has also been provided and can be found above.
+The following tutorial gives a step by step guide on how to successfully use the pipeline in order to get the desired results. The the script for this pipeline can be found in Google Colab 
 
 ## Requirements
 
@@ -31,6 +31,9 @@ def mart_finder(file_name_1):
     list_1 = server.list_marts()
     list_1.to_csv(file_name_1, index=False)
 ```
+When this function is called, it should output a file that looks similar to the one below.
+
+
 
 ## BioMart Ensembl Databases 
 
@@ -44,6 +47,8 @@ def database_finder(mart_name, file_name_2):
     list_2 = mart.list_datasets()
     list_2.to_csv(file_name_2, index=False)
 ```
+
+When this function is called, it should output a file that looks similar to the one below.
 
 ## Find Filters and Attributes For a Specific BioMart Ensembl Database
 
@@ -62,6 +67,9 @@ def filters_attributes(species, file_1, file_2):
         for item in list_2.keys():
             f.write("%s,%s\n" % (item, list_2[item]))
 ```  
+
+When this function is called, it should output files that look similar to the ones below.
+
 
 ## Gather Data 
 
@@ -91,6 +99,8 @@ def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
     filtered_set.columns = filtered_set.columns.str.replace(' ', '_')
     filtered_set.to_csv(file_name, index=False)
 ```
+When this function is called, it should output a file that looks similar to the one below.
+
 
 ## Filter Data 
 
