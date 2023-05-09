@@ -67,10 +67,9 @@ def filters_attributes(species, file_1, file_2):
             f.write("%s,%s\n" % (item, list_2[item]))
 ```  
 
-When this function is called, it should output files that look similar to the ones below.
+When this function is called, it should output attribute and filter files that look similar to the ones below.
 
 <img src="output_files/attributes_output.png">
-
 
 <img src="output_files/filters_output.png" width="675" height="487.5">
 
