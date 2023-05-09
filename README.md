@@ -71,7 +71,7 @@ When this function is called, it should output files that look similar to the on
 
 <img src="(output_files/attributes_output.png">
 
-<img src="output_files/filters_output.png" width="600" height="600">
+<img src="output_files/filters_output.png" width="100" height="100">
 
 
 ## Gather Data 
