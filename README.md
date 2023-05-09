@@ -46,6 +46,8 @@ def database_finder(mart_name, file_name_2):
 
 When this function is called, it should output a file that looks similar to the one below.
 
+![Available Databases](output_files/database_output.png)
+
 ## Find Filters and Attributes For a Specific BioMart Ensembl Database
 
 Step 4: All of the datasets have differing attributtes and filters which can be used to query specific information. All of the available filters and attributes for a particular species dataset can be accessed and saved to files.
