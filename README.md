@@ -105,7 +105,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Filter Data 
 
-Filter the datasets so that they relflect the genes present on the gene list.
+Step 7: Filter the datasets so that they relflect the genes present on the gene list.
 
 ```Python
 def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
@@ -142,7 +142,7 @@ def dataset_1_final_filter(species, gene_list, file_name):
 
 ## Filter Data By Gene Ontology
 
-Filter species datasets by gene ontology term.
+Step 8: Filter species datasets by gene ontology term.
 
 ```Python
 def gene_ontology_filter(file, go_term, go_name_filter):
@@ -153,7 +153,7 @@ def gene_ontology_filter(file, go_term, go_name_filter):
 
 ## Select Specified RefSeq
 
-Filter species datasets to get a gene of interest. 
+Step 9: Filter species datasets to get a gene of interest. 
 
 ```Python
 def ref_seq_list(file_name, gene, column_name, name):
@@ -164,7 +164,7 @@ def ref_seq_list(file_name, gene, column_name, name):
     desired_gene = filtered.query("Gene_name in @list")
     desired_gene.to_csv(name, index=False)
 ```
-Retrieve desired RefSeq sequences.
+Step 10: Retrieve the desired RefSeq sequences.
 
 ```Python
 def ref_seq_sequence(email, db_type, id, file_name):
@@ -178,7 +178,7 @@ def ref_seq_sequence(email, db_type, id, file_name):
 
 ## Perform Pariwise Alignment
 
-Views all available substitution matrices. 
+Step 11: Views all available substitution matrices. 
 
 ```Python
 def matrix():
@@ -186,7 +186,7 @@ def matrix():
     print('The following pre-defined matrices of', ', '.join(matrix_list), 'are available.')
 ```
 
-Find all possible pairwise alignment variations.
+Step 12: Find all possible pairwise alignment variations.
 
 ```Python
 def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
@@ -200,7 +200,7 @@ def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
     print("There are", len(alignments), "possible alignments.")
 ```
 
-Perform pairwise alignment.
+Step 13: Perform pairwise alignment.
 
 ```Python
 def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, alignment):
@@ -223,7 +223,7 @@ def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, 
 
 ## Function Arguments
 
-ALl of the functtions are called in order to implement the pipeline and gets the results that are mentioned above.
+Step 14: Call the functions in order to implement the pipeline and get the results that are mentioned above.
 
 ```Python
 if __name__ == '__main__':
