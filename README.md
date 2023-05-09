@@ -93,6 +93,8 @@ def dataset_retrieve(species, chrom, file_name):
 
 When this function is called, it should output a file that looks similar to the one below.
 
+<img src="output_files/query_output.png">
+
 
 Step 6: Find all the homologs for the two species of interest in order to make a gene list.
 
