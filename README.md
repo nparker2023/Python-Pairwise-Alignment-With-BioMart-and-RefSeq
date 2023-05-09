@@ -30,7 +30,7 @@ def mart_finder(file_name_1):
 ```
 When this function is called, it should output a file that looks similar to the one below.
 
-
+![My Image](output_files/mart_output.jpg)
 
 ## BioMart Ensembl Databases 
 
