@@ -32,6 +32,8 @@ When this function is called, it should output a file that looks similar to the 
 
 ![Available Marts](output_files/mart_output.png)
 
+<img src="output_files/mart_output.png" width="550" height="550">
+
 ## BioMart Ensembl Databases 
 
 Step 3: After sellecting a particular mart, it can be used to access all its corresponding BioMart Ensembl databases.
