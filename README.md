@@ -71,6 +71,7 @@ When this function is called, it should output files that look similar to the on
 
 <img src="output_files/attributes_output.png">
 
+
 <img src="output_files/filters_output.png" width="675" height="487.5">
 
 
