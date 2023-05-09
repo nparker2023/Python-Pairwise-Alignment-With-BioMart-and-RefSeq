@@ -32,7 +32,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ![Available Marts](output_files/mart_output.png)
 
-<img src="output_files/mart_output.png" width="550" height="550">
+<img src="output_files/mart_output.png">
 
 ## BioMart Ensembl Databases 
 
