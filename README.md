@@ -48,7 +48,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ![Available Databases](output_files/database_output.png)
 
-<img src="output_files/database_output.png" width="1000" height="1000">
+<img src="output_files/database_output.png" width="400" height="400">
 
 ## Find Filters and Attributes For a Specific BioMart Ensembl Database
 
