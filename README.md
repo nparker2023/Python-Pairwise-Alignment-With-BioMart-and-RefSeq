@@ -69,9 +69,9 @@ def filters_attributes(species, file_1, file_2):
 
 When this function is called, it should output files that look similar to the ones below.
 
-![Available Atrributes](output_files/attributes_output.png)
+<img src="(output_files/attributes_output.png">
 
-![Available Filters](output_files/filters_output.png)
+<img src="output_files/filters_output.png" width="600" height="600">
 
 
 ## Gather Data 
