@@ -88,7 +88,7 @@ def dataset_retrieve(species, chrom, file_name):
 When this function is called, it should output a file that looks similar to the one below.
 
 
-Step 6: Find all the homologs for the two species of interest.
+Step 6: Find all the homologs for the two species of interest in order to make a gene list.
 
 ```Python
 def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
@@ -105,7 +105,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Filter Data 
 
-Filter the datasets so that they contain the homolog list, the first species dataset, and the second species datastest are reflective of one another.
+Filter the datasets so that they relflect the genes present on the gene list.
 
 ```Python
 def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
