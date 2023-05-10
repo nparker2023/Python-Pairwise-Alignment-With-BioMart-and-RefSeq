@@ -1,7 +1,3 @@
-# Install packages
-# !pip install pybiomart --quiet
-# !pip install biopython --quiet
-
 # Load packages 
 from pybiomart import Dataset, Server
 import pandas as pd
