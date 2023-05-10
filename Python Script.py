@@ -3,19 +3,16 @@ import pandas as pd
 from Bio import Entrez, Align, SeqIO
 from Bio.Align import substitution_matrices
 
-
 def mart_finder(file_name_1):
     server = Server(host='http://www.ensembl.org')
     list_1 = server.list_marts()
     list_1.to_csv(file_name_1, index=False)
-
 
 def database_finder(mart_name, file_name_2):
     server = Server(host='http://www.ensembl.org')
     mart = server[mart_name]
     list_2 = mart.list_datasets()
     list_2.to_csv(file_name_2, index=False)
-
 
 def filters_attributes(species, file_1, file_2):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
@@ -29,7 +26,6 @@ def filters_attributes(species, file_1, file_2):
         for item in list_2.keys():
             f.write("%s,%s\n" % (item, list_2[item]))
 
-
 def dataset_retrieve(species, chrom, file_name):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
     species_query = species_dataset.query(
@@ -40,7 +36,6 @@ def dataset_retrieve(species, chrom, file_name):
     filtered_set.columns = filtered_set.columns.str.replace(' ', '_')
     filtered_set.to_csv(file_name, index=False)
 
-
 def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
     species_dataset = Dataset(name=species_1, host='http://www.ensembl.org')
     gene_list_query = species_dataset.query(
@@ -49,7 +44,6 @@ def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
     filtered_set = gene_list_query.dropna()
     filtered_set.columns = filtered_set.columns.str.replace(' ', '_')
     filtered_set.to_csv(file_name, index=False)
-
 
 def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
     dataset = pd.read_csv(species)
@@ -61,7 +55,6 @@ def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
     genes_filter = genes.query("Gene_name in @list_2")
     genes_filter.to_csv(filter_gene, index=False)
 
-
 def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, file_name_2):
     dataset = pd.read_csv(species)
     genes = pd.read_csv(gene_list)
@@ -72,7 +65,6 @@ def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, fil
     dataset_query_2 = genes[genes[column_name].isin(list_2)]
     dataset_query_2.to_csv(file_name_2, index=False)
 
-
 def dataset_1_final_filter(species, gene_list, file_name):
     dataset = pd.read_csv(species)
     genes = pd.read_csv(gene_list)
@@ -80,12 +72,10 @@ def dataset_1_final_filter(species, gene_list, file_name):
     dataset_query = dataset.query("Gene_name in @list_1")
     dataset_query.to_csv(file_name, index=False)
 
-
 def gene_ontology_filter(file, go_term, go_name_filter):
     filtered_species = pd.read_csv(file)
     query = filtered_species[filtered_species['GO_term_name'].isin([go_term])]
     query.to_csv(go_name_filter, index=False)
-
 
 def ref_seq_list(file_name, gene, column_name, name):
     file = pd.read_csv(file_name)
@@ -95,7 +85,6 @@ def ref_seq_list(file_name, gene, column_name, name):
     desired_gene = filtered.query("Gene_name in @list")
     desired_gene.to_csv(name, index=False)
 
-
 def ref_seq_sequence(email, db_type, id, file_name):
     Entrez.email = email
     net_handle = Entrez.efetch(db=db_type, id=id, rettype='fasta', retmode='text')
@@ -104,11 +93,9 @@ def ref_seq_sequence(email, db_type, id, file_name):
     out_handle.close()
     net_handle.close()
 
-
 def matrix():
     matrix_list = substitution_matrices.load()
     print('The following pre-defined matrices of', ', '.join(matrix_list), 'are available.')
-
 
 def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
     aligner = Align.PairwiseAligner()
@@ -119,7 +106,6 @@ def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
     sequence_2 = SeqIO.read(file_2, "fasta")
     alignments = aligner.align(sequence_1, sequence_2)
     print("There are", len(alignments), "possible alignments.")
-
 
 def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, alignment):
     aligner = Align.PairwiseAligner()
@@ -136,7 +122,6 @@ def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, 
         file.writelines(["Extended penalty:", ' ', str(abs(extend_gap)), '\n'])
         file.writelines(["Score:", ' ', str(score), '\n'])
         file.writelines(['\n', str(alignments[alignment])])
-
 
 if __name__ == '__main__':
     mart_finder('mart_list.csv')
