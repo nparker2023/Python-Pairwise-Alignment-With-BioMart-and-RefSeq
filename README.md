@@ -219,6 +219,8 @@ def matrix():
 ```
 When this function is called, it should output a statement that looks similar to the one below.
 
+<img src="output_files/possible_matrix_output.png">
+
 
 Step 12: Find all possible pairwise alignment variations.
 
