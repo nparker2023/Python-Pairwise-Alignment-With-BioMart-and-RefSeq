@@ -4,7 +4,8 @@
 
 The following tutorial gives a step by step guide on how to successfully use the pipeline in order to get the desired results. A more in depth and commentated script for this pipeline can be found in Google Colab as a .ipynb document by clicking on the badge. The script has also been provided as a .py document and can be found above.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1pH4O5FfuRbRmJvIbEOK8DeyZAchO6B_T?usp=sharing)
+
 
 ## Requirements
 
