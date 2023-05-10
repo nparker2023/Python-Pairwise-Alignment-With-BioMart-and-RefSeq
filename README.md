@@ -254,7 +254,7 @@ def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, 
 ```
 When this function is called, it should output a file that looks similar to the one below.
 
-<img src="output_files/pairwise_alignment_output.png">
+<img src="output_files/pairwise_alignment_output.png" width="600" height="600">
 
 ## Function Arguments
 
