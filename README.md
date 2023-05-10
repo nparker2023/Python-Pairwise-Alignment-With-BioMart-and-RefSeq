@@ -191,6 +191,8 @@ def ref_seq_list(file_name, gene, column_name, name):
 
 When this function is called, it should output a file that looks similar to the one below.
 
+<img src="output_files/refseq_list.png">
+
 Step 10: Retrieve the desired RefSeq sequences.
 
 ```Python
