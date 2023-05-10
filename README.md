@@ -235,6 +235,8 @@ def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
 ```
 When this function is called, it should output a statement that looks similar to the one below.
 
+<img src="output_files/possible_pairwise_statement.png">
+
 Step 13: Perform pairwise alignment between two different sequences.
 
 ```Python
