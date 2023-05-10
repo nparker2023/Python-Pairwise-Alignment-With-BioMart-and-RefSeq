@@ -131,6 +131,8 @@ def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
     genes_filter.to_csv(filter_gene, index=False)
 ```
 
+When this function is called, it should output a file that looks similar to the one below.
+
 ```Python
 # Queries are filtered out if they don't appear on the gene list for the second species dataset
 def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, file_name_2):
@@ -144,6 +146,8 @@ def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, fil
     dataset_query_2.to_csv(file_name_2, index=False)
 ```
 
+When this function is called, it should output a file that looks similar to the one below.
+
 ```Python
 # First species dataset is updated to reflect filtered second species dataset
 def dataset_1_final_filter(species, gene_list, file_name):
@@ -153,6 +157,8 @@ def dataset_1_final_filter(species, gene_list, file_name):
     dataset_query = dataset.query("Gene_name in @list_1")
     dataset_query.to_csv(file_name, index=False)
 ```
+
+When this function is called, it should output a file that looks similar to the one below.
 
 ## Filter Data By Gene Ontology
 
@@ -165,6 +171,8 @@ def gene_ontology_filter(file, go_term, go_name_filter):
     query = filtered_species[filtered_species['GO_term_name'].isin([go_term])]
     query.to_csv(go_name_filter, index=False)
 ```
+
+When this function is called, it should output a file that looks similar to the one below.
 
 ## Select Specified RefSeq
 
@@ -180,6 +188,9 @@ def ref_seq_list(file_name, gene, column_name, name):
     desired_gene = filtered.query("Gene_name in @list")
     desired_gene.to_csv(name, index=False)
 ```
+
+When this function is called, it should output a file that looks similar to the one below.
+
 Step 10: Retrieve the desired RefSeq sequences.
 
 ```Python
@@ -193,6 +204,8 @@ def ref_seq_sequence(email, db_type, id, file_name):
     net_handle.close()
 ```
 
+When this function is called, it should output a file that looks similar to the one below.
+
 ## Perform Pariwise Alignment
 
 Step 11: View all of the available substitution matrices. 
@@ -202,6 +215,8 @@ def matrix():
     matrix_list = substitution_matrices.load()
     print('The following pre-defined matrices of', ', '.join(matrix_list), 'are available.')
 ```
+When this function is called, it should output a statement that looks similar to the one below.
+
 
 Step 12: Find all possible pairwise alignment variations.
 
@@ -216,6 +231,7 @@ def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
     alignments = aligner.align(sequence_1, sequence_2)
     print("There are", len(alignments), "possible alignments.")
 ```
+When this function is called, it should output a statement that looks similar to the one below.
 
 Step 13: Perform pairwise alignment.
 
@@ -236,7 +252,7 @@ def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, 
         file.writelines(["Score:", ' ', str(score), '\n'])
         file.writelines(['\n', str(alignments[alignment])])
 ```
-
+When this function is called, it should output a file that looks similar to the one below.
 
 ## Function Arguments
 
