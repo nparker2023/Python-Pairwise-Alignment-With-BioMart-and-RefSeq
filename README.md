@@ -119,6 +119,7 @@ When this function is called, it should output a file that looks similar to the 
 Step 7: Filter the datasets so that they relflect the genes present on the gene list.
 
 ```Python
+# Queries are filtered out if they don't appear on the gene list for the first species dataset
 def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
     dataset = pd.read_csv(species)
     genes = pd.read_csv(gene_list)
@@ -131,6 +132,7 @@ def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
 ```
 
 ```Python
+# Queries are filtered out if they don't appear on the gene list for the second species dataset
 def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, file_name_2):
     dataset = pd.read_csv(species)
     genes = pd.read_csv(gene_list)
@@ -143,6 +145,7 @@ def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, fil
 ```
 
 ```Python
+# First species dataset is updated to reflect filtered second species dataset
 def dataset_1_final_filter(species, gene_list, file_name):
     dataset = pd.read_csv(species)
     genes = pd.read_csv(gene_list)
