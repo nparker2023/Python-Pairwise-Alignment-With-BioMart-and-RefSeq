@@ -179,7 +179,7 @@ def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
     print("There are", len(alignments), "possible alignments.")
 
 
-# Creates pairwise alignment from two specie sequences
+# Creates pairwise alignment from two species sequences
 def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, alignment):
     aligner = Align.PairwiseAligner()
     # Values for open and extended gaps are set
