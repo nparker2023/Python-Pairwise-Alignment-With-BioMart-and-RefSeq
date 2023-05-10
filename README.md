@@ -233,7 +233,7 @@ def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
 ```
 When this function is called, it should output a statement that looks similar to the one below.
 
-Step 13: Perform pairwise alignment.
+Step 13: Perform pairwise alignment between two different sequences.
 
 ```Python
 def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, alignment):
@@ -253,6 +253,8 @@ def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, 
         file.writelines(['\n', str(alignments[alignment])])
 ```
 When this function is called, it should output a file that looks similar to the one below.
+
+<img src="output_files/pairwise_alignment_output.png">
 
 ## Function Arguments
 
