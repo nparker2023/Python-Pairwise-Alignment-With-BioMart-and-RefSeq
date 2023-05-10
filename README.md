@@ -54,6 +54,7 @@ Step 4: All of the datasets have differing attributtes and filters which can be 
 
 ```Python
 # Filters and attributes get their own file
+# This function is called twice (1 per different species)
 def filters_attributes(species, file_1, file_2):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
     list_1 = species_dataset.filters
@@ -80,6 +81,7 @@ Step 5: The attributes and filters for a dataset can be used to narrow down to g
 
 ```Python
 # In order to work with the data later on, all blanks must be removed and column names must be written in a way that makes them easy to manipulate.
+# This function is called twice (1 per different species)
 def dataset_retrieve(species, chrom, file_name):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
     species_query = species_dataset.query(
@@ -154,6 +156,7 @@ def dataset_1_final_filter(species, gene_list, file_name):
 Step 8: Filter species datasets by gene ontology term.
 
 ```Python
+# This function is called twice (1 per different species)
 def gene_ontology_filter(file, go_term, go_name_filter):
     filtered_species = pd.read_csv(file)
     query = filtered_species[filtered_species['GO_term_name'].isin([go_term])]
@@ -165,6 +168,7 @@ def gene_ontology_filter(file, go_term, go_name_filter):
 Step 9: Filter species datasets to get a gene of interest. 
 
 ```Python
+# This function is called twice (1 per different species)
 def ref_seq_list(file_name, gene, column_name, name):
     file = pd.read_csv(file_name)
     filtered = file.loc[:, [column_name, "Gene_name"]]
@@ -176,6 +180,7 @@ def ref_seq_list(file_name, gene, column_name, name):
 Step 10: Retrieve the desired RefSeq sequences.
 
 ```Python
+# This function is called twice (1 per different species)
 def ref_seq_sequence(email, db_type, id, file_name):
     Entrez.email = email
     net_handle = Entrez.efetch(db=db_type, id=id, rettype='fasta', retmode='text')
