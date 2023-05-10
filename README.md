@@ -187,7 +187,7 @@ def ref_seq_sequence(email, db_type, id, file_name):
 
 ## Perform Pariwise Alignment
 
-Step 11: Views all available substitution matrices. 
+Step 11: View all of the available substitution matrices. 
 
 ```Python
 def matrix():
