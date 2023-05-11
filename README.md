@@ -82,7 +82,7 @@ When this function is called, it should output attribute and filter files that l
 
 ## Gather Data 
 
-Step 5: Query data from a particular dataset based on specific attributes and filters in order to get specific . The queries for a particular species dataset can be saved as a file.
+Step 5: Query data from a particular dataset based on specific attributes and filters in order to get specific queries. The queries for a particular species dataset can be saved as a file.
 
 ```Python
 # In order to work with the data later on, all blanks must be removed and column names must be written in a way that makes them easy to manipulate.
