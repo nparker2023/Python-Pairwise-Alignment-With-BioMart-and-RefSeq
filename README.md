@@ -149,6 +149,8 @@ def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, fil
     dataset_query_2.to_csv(file_name_2, index=False)
 ```
 
+When these functions are called, they should output files similar to the ones shown in the following images. The following images show the databases and gene list before and after filtering. Most noticeably, the filtered datasets and gene list have fewer rows than their counterparts.
+
 ```Python
 # First species dataset is updated to reflect filtered second species dataset
 def dataset_1_final_filter(species, gene_list, file_name):
@@ -159,7 +161,6 @@ def dataset_1_final_filter(species, gene_list, file_name):
     dataset_query.to_csv(file_name, index=False)
 ```
 
-When these functions are called, they should output files which are shown in the following images. The following images show the databases and gene list before and after filtering. Most noticeably, the filtered datasets and gene list have fewer rows than their counterparts.
 
 ## Filter Data By Gene Ontology
 
