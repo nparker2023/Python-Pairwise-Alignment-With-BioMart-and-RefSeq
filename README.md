@@ -25,7 +25,7 @@ from Bio.Align import substitution_matrices
 ```
 ## Selecting Marts
 
-Step 2: Select a mart in order to access the BioMart Ensembl databases. All of the available marts can be accessed as a list and saved to file. 
+Step 2: Select a mart in order to access the BioMart Ensembl databases. All of the available marts can be accessed as a list and saved to a csv file. 
 
 ```Python
 def mart_finder(file_name_1):
@@ -39,7 +39,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## BioMart Ensembl Databases 
 
-Step 3: After sellecting a particular mart, use it to access all its corresponding BioMart Ensembl databases. All of the available datasets can be accessed as a list and saved to file. 
+Step 3: After sellecting a particular mart, use it to access all its corresponding BioMart Ensembl databases. All of the available datasets can be accessed as a list and saved to a csv file. 
 
 ```Python
 def database_finder(mart_name, file_name_2):
@@ -55,7 +55,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Filters and Attributes For a Specific BioMart Ensembl Database
 
-Step 4: Find the filters and attributes for a specific database. The filters and attributtes will vary to a degree depending on the dataset selected. All of the available filters and attributes for a particular species dataset can be accessed and saved to files.
+Step 4: Find the filters and attributes for a specific database. The filters and attributtes will vary to a degree depending on the dataset selected. All of the available filters and attributes for a particular species dataset can be accessed and saved to csv files.
 
 ```Python
 # Filters and attributes get their own file
@@ -82,7 +82,7 @@ When this function is called, it should output attribute and filter files that l
 
 ## Gather Data 
 
-Step 5: Query data from a particular dataset based on specific attributes and filters in order to get specific queries. The queries for a particular species dataset can be saved as a file.
+Step 5: Query data from a particular dataset based on specific attributes and filters in order to get specific queries. The queries for a particular species dataset can be saved as a csv file.
 
 ```Python
 # In order to work with the data later on, all blanks must be removed and column names must be written in a way that makes them easy to manipulate.
@@ -121,7 +121,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Filter Data 
 
-Step 7: Filter the datasets so that they relflect the genes present on the gene list. These updated datasets can be saved to file.
+Step 7: Filter the datasets so that they relflect the genes present on the gene list. These updated datasets can be saved to a csv file.
 
 ```Python
 # Queries are filtered out if they don't appear on the gene list for the first species dataset
@@ -167,7 +167,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Filter Data By Gene Ontology
 
-Step 8: Filter species datasets by gene ontology term and save to a file.
+Step 8: Filter species datasets by gene ontology term and save to a csv file.
 
 ```Python
 # This function is called twice (1 per different species)
@@ -181,7 +181,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Select Specified RefSeq
 
-Step 9: Filter species datasets to get a gene of interest and save to a file. 
+Step 9: Filter species datasets to get a gene of interest and save to a csv file. 
 
 ```Python
 # This function is called twice (1 per different species)
@@ -198,7 +198,7 @@ When this function is called, it should output a file that looks similar to the 
 
 <img src="output_files/refseq_list.png">
 
-Step 10: Retrieve the desired RefSeq sequences and save to a file.
+Step 10: Retrieve the desired RefSeq sequences and save to a fasta file.
 
 ```Python
 # This function is called twice (1 per different species)
@@ -229,7 +229,7 @@ When this function is called, it should output a statement that looks similar to
 <img src="output_files/possible_matrix_output.png">
 
 
-Step 12: Find all possible pairwise alignment variations.
+Step 12: Find all possible pairwise alignment variations between the two chosen sequences.
 
 ```Python
 def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
@@ -246,7 +246,7 @@ When this function is called, it should output a statement that looks similar to
 
 <img src="output_files/possible_pairwise_statement.png">
 
-Step 13: Perform pairwise alignment between two different sequences and save the results to a file.
+Step 13: Perform pairwise alignment between two different sequences and save the results to a txt file.
 
 ```Python
 def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, alignment):
