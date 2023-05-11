@@ -121,7 +121,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Filter Data 
 
-Step 7: Filter the datasets so that they relflect the genes present on the gene list.
+Step 7: Filter the datasets so that they relflect the genes present on the gene list. These updated datasets can be saved to file.
 
 ```Python
 # Queries are filtered out if they don't appear on the gene list for the first species dataset
