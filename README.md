@@ -123,8 +123,6 @@ When this function is called, it should output a file that looks similar to the 
 
 Step 7: Filter the datasets so that they relflect the genes present on the gene list. These updated datasets can be saved to a csv file.
 
-When these functions are called, they should output files which are shown in the following images. The following images show the databases and gene list before and after filtering. Most noticeably, the filtered datasets and gene list have fewer rows than their counterparts.
-
 ```Python
 # Queries are filtered out if they don't appear on the gene list for the first species dataset
 def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
@@ -137,8 +135,6 @@ def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
     genes_filter = genes.query("Gene_name in @list_2")
     genes_filter.to_csv(filter_gene, index=False)
 ```
-
-When this function is called, it should output a file that looks similar to the one below.
 
 ```Python
 # Queries are filtered out if they don't appear on the gene list for the second species dataset
@@ -153,8 +149,6 @@ def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, fil
     dataset_query_2.to_csv(file_name_2, index=False)
 ```
 
-When this function is called, it should output a file that looks similar to the one below.
-
 ```Python
 # First species dataset is updated to reflect filtered second species dataset
 def dataset_1_final_filter(species, gene_list, file_name):
@@ -165,7 +159,7 @@ def dataset_1_final_filter(species, gene_list, file_name):
     dataset_query.to_csv(file_name, index=False)
 ```
 
-When this function is called, it should output a file that looks similar to the one below.
+When these functions are called, they should output files which are shown in the following images. The following images show the databases and gene list before and after filtering. Most noticeably, the filtered datasets and gene list have fewer rows than their counterparts.
 
 ## Filter Data By Gene Ontology
 
