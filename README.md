@@ -179,6 +179,8 @@ def gene_ontology_filter(file, go_term, go_name_filter):
 
 When this function is called, it should output a file that looks similar to the one below.
 
+<img src="output_files/gene_ontology_output.png">
+
 ## Select Specified RefSeq
 
 Step 9: Filter species datasets to get a gene of interest and save to a csv file. 
