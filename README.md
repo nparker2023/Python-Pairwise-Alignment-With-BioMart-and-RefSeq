@@ -123,6 +123,8 @@ When this function is called, it should output a file that looks similar to the 
 
 Step 7: Filter the datasets so that they relflect the genes present on the gene list. These updated datasets can be saved to a csv file.
 
+When these functions are called, they should output files which are shown in the following images. The following images show the databases and gene list before and after filtering. Most noticeably, the filtered datasets and gene list have fewer rows than their counterparts.
+
 ```Python
 # Queries are filtered out if they don't appear on the gene list for the first species dataset
 def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
