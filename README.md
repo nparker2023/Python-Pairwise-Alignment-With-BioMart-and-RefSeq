@@ -200,7 +200,7 @@ When this function is called, it should output a file that looks similar to the 
 
 <img src="output_files/refseq_list.png">
 
-Step 10: Retrieve the desired RefSeq sequences and save to a fasta file.
+Step 10: Retrieve the desired RefSeq sequences from NCBI and save it to a fasta file.
 
 ```Python
 # This function is called twice (1 per different species)
