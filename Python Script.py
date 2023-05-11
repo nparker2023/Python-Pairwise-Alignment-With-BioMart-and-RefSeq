@@ -1,6 +1,8 @@
 # Install packages
-!pip install pybiomart --quiet
-!pip install biopython --quiet
+# This step only applies to installing in Google Collab
+# If using another interface, packages may need to be installed another way
+# !pip install pybiomart --quiet
+# !pip install biopython --quiet
 
 # Load packages 
 from pybiomart import Dataset, Server
