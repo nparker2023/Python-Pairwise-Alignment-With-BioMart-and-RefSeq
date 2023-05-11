@@ -12,6 +12,8 @@ The following tutorial gives a step by step guide on how to successfully use the
 Step 1: The following packages are required in order for this pipeline to run successfully.
 
 ```Python
+# This step only applies to installing in Google Collab
+# If using another interface, packages may need to be installed another way
 !pip install pybiomart --quiet
 !pip install biopython --quiet
 ```
