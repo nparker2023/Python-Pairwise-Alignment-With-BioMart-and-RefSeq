@@ -9,7 +9,7 @@ The following tutorial gives a step by step guide on how to successfully use the
 
 ## Requirements
 
-Step 1: The following packages are required in order for this pipeline to run successfully.
+Step 1: Install and load all of the necessary packages in order for this pipeline to run successfully.
 
 ```Python
 # This step only applies to installing in Google Collab
@@ -25,7 +25,7 @@ from Bio.Align import substitution_matrices
 ```
 ## Selecting Marts
 
-Step 2: A mart must be selected in order to access the BioMart Ensembl databases. All of the availible marts can be accessed as a list and saved to file. 
+Step 2: Select a mart in order to access the BioMart Ensembl databases. All of the availible marts can be accessed as a list and saved to file. 
 
 ```Python
 def mart_finder(file_name_1):
@@ -39,7 +39,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## BioMart Ensembl Databases 
 
-Step 3: After sellecting a particular mart, it can be used to access all its corresponding BioMart Ensembl databases.
+Step 3: After sellecting a particular mart, use it to access all its corresponding BioMart Ensembl databases.
 
 ```Python
 def database_finder(mart_name, file_name_2):
