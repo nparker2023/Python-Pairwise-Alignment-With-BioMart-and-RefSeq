@@ -157,7 +157,7 @@ When these functions are called, they should output files similar to the ones sh
 
 <img src="output_files/dataset_filter.png" width="640" height="360">
 
-<img src="output_files/gene_list_filter.png">
+<img src="output_files/gene_list_filter.png" width="640" height="360"
 
 ```Python
 # First species dataset is updated to reflect filtered second species dataset
