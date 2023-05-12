@@ -75,9 +75,6 @@ def filters_attributes(species, file_1, file_2):
 
 When this function is called, it should output attribute and filter files that look similar to the ones below.
 
-
-*Note: The following examples are from species_1*
-
 <img src="output_files/attributes_output.png">
 
 <img src="output_files/filters_output.png" width="675" height="487.5">
