@@ -170,7 +170,9 @@ def dataset_1_final_filter(species, gene_list, file_name):
     dataset_query = dataset.query("Gene_name in @list_1")
     dataset_query.to_csv(file_name, index=False)
 ```
+When this function is called, it should output a file similar to the one shown in the following image. The following image show a database before and after filtering. Similar to the previous two functions, the filtered dataset has fewer rows than the non-filtered dataset.
 
+<img src="output_files/dataset_1_final_filter.png" width="640" height="360">
 
 ## Filter Data By Gene Ontology
 
