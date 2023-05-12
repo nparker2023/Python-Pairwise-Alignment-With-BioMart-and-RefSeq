@@ -153,7 +153,11 @@ def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, fil
     dataset_query_2.to_csv(file_name_2, index=False)
 ```
 
-When these functions are called, they should output files similar to the ones shown in the following images. The following images show the databases and gene list before and after filtering. Most noticeably, the filtered datasets and gene list have fewer rows than their counterparts.
+When these functions are called, they should output files similar to the ones shown in the following images. The following images show a database and gene list before and after filtering. Most noticeably, the filtered files have fewer rows than the non-filtered files.
+
+<img src="output_files/dataset_filter.png">
+
+<img src="output_files/gene_list_filter.png">
 
 ```Python
 # First species dataset is updated to reflect filtered second species dataset
