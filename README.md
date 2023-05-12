@@ -223,7 +223,7 @@ def ref_seq_sequence(email, db_type, id, file_name):
 
 When this function is called, it should output a file that looks similar to the one below.
 
-<img src="output_files/refseq_fasta_output.png" width="396.5" height="454">
+<img src="output_files/refseq_fasta_output.png" width="594.75" height="681">
 
 ## Perform Pariwise Alignment
 
