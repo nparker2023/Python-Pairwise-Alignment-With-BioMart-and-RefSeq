@@ -1,6 +1,6 @@
 # Install packages
 # This step only applies to installing in Google Collab
-# If using another interface, packages may need to be installed another way
+# If using another IDE, packages may need to be installed another way
 # !pip install pybiomart --quiet
 # !pip install biopython --quiet
 
@@ -79,8 +79,9 @@ def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
 
 # Queries are filtered out if they don't appear on the gene list for the first species dataset
 def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
-    # Files are selected
+    # Species_1 dataset selected
     dataset = pd.read_csv(species)
+    # Uses gene list made from gene_list function
     genes = pd.read_csv(gene_list)
     # Removes duplicate gene names from gene list
     list_1 = genes['Gene_name'].unique()
@@ -96,8 +97,9 @@ def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
 
 # Queries are filtered out if they don't appear on the gene list for the second species dataset
 def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, file_name_2):
-    # Files are selected
+    # Species_2 dataset is selected
     dataset = pd.read_csv(species)
+    # Uses gene list made from gene_list_dataset_1_filter function
     genes = pd.read_csv(gene_list)
     # Removes duplicate gene names from filtered gene list
     list_1 = genes[column_name].unique()
@@ -113,8 +115,9 @@ def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, fil
 
 # First species dataset is updated to reflect filtered second species dataset
 def dataset_1_final_filter(species, gene_list, file_name):
-    # Files are selected
+    # Use species_1_filter from gene_list_dataset_1_filter function
     dataset = pd.read_csv(species)
+    # Uses filter_gene_final from gene_list_dataset_2_filter function
     genes = pd.read_csv(gene_list)
     # Removes duplicate gene names from final filtered gene list
     list_1 = list(genes['Gene_name'].unique())
@@ -126,6 +129,7 @@ def dataset_1_final_filter(species, gene_list, file_name):
 # Finds queries that have a specific gene ontology name
 # This function is called twice (1 per different species)
 def gene_ontology_filter(file, go_term, go_name_filter):
+    # Uses final filter datasets from gene_list_dataset_2_filter and dataset_1_final_filter functions
     filtered_species = pd.read_csv(file)
     # Return dataset entries that have specified GO term and saved to file
     query = filtered_species[filtered_species['GO_term_name'].isin([go_term])]
@@ -135,6 +139,7 @@ def gene_ontology_filter(file, go_term, go_name_filter):
 # Returns RefSeqs for a particular gene
 # This function is called twice (1 per different species)
 def ref_seq_list(file_name, gene, column_name, name):
+    # Uses files created from gene_ontology_filter
     file = pd.read_csv(file_name)
     filtered = file.loc[:, [column_name, "Gene_name"]]
     # Duplicate RefSeqs are removed
