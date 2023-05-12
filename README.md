@@ -126,7 +126,9 @@ Step 7: Filter the datasets so that they relflect the genes present on the gene 
 ```Python
 # Queries are filtered out if they don't appear on the gene list for the first species dataset
 def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
+    # Species_1 dataset selected
     dataset = pd.read_csv(species)
+    # Uses gene list made from gene_list function
     genes = pd.read_csv(gene_list)
     list_1 = genes['Gene_name'].unique()
     dataset_query = dataset.query("Gene_name in @list_1")
@@ -139,7 +141,9 @@ def gene_list_dataset_1_filter(species, gene_list, species_filter, filter_gene):
 ```Python
 # Queries are filtered out if they don't appear on the gene list for the second species dataset
 def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, file_name_2):
+    # Species_2 dataset is selected
     dataset = pd.read_csv(species)
+    # Uses gene list made from gene_list_dataset_1_filter function
     genes = pd.read_csv(gene_list)
     list_1 = genes[column_name].unique()
     dataset_query = dataset.query("Gene_stable_ID in @list_1")
@@ -154,7 +158,9 @@ When these functions are called, they should output files similar to the ones sh
 ```Python
 # First species dataset is updated to reflect filtered second species dataset
 def dataset_1_final_filter(species, gene_list, file_name):
+    # Use species_1_filter from gene_list_dataset_1_filter function
     dataset = pd.read_csv(species)
+    # Uses filter_gene_final from gene_list_dataset_2_filter function
     genes = pd.read_csv(gene_list)
     list_1 = list(genes['Gene_name'].unique())
     dataset_query = dataset.query("Gene_name in @list_1")
@@ -169,6 +175,7 @@ Step 8: Filter species datasets by gene ontology term and save to a csv file.
 ```Python
 # This function is called twice (1 per different species)
 def gene_ontology_filter(file, go_term, go_name_filter):
+    # Uses final filter datasets from gene_list_dataset_2_filter and dataset_1_final_filter functions
     filtered_species = pd.read_csv(file)
     query = filtered_species[filtered_species['GO_term_name'].isin([go_term])]
     query.to_csv(go_name_filter, index=False)
