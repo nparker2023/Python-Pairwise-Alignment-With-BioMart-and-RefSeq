@@ -206,7 +206,7 @@ def ref_seq_list(file_name, gene, column_name, name):
 
 When this function is called, it should output a file that looks similar to the one below.
 
-<img src="output_files/refseq_list.png">
+<img src="output_files/refseq_list.png" width="236.25" height="351.75">
 
 Step 10: Retrieve the desired RefSeq sequences from NCBI and save it to a fasta file.
 
