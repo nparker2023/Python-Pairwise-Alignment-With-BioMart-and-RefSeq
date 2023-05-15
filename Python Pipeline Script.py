@@ -142,7 +142,7 @@ def ref_seq_list(file_name, gene, column_name, name):
     # Uses files created from gene_ontology_filter
     file = pd.read_csv(file_name)
     filtered = file.loc[:, [column_name, "Gene_name"]]
-    # Duplicate RefSeqs are removed
+    # Duplicate RefSeqs are removed and info saved to file
     filtered.drop_duplicates(keep='first', inplace=True)
     list = [gene]
     desired_gene = filtered.query("Gene_name in @list")
