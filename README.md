@@ -248,6 +248,7 @@ Step 12: Find all possible pairwise alignment variations between the two chosen 
 ```Python
 def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
     aligner = Align.PairwiseAligner()
+    # Open and extended gap values must be entered as negative integers
     aligner.open_gap_score = open_gap
     aligner.extend_gap_score = extend_gap
     aligner.substitution_matrix = substitution_matrices.load(matrix)
@@ -265,6 +266,7 @@ Step 13: Perform pairwise alignment between two different sequences and save the
 ```Python
 def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, alignment):
     aligner = Align.PairwiseAligner()
+    # Open and extended gap values must be entered as negative integers
     aligner.open_gap_score = open_gap
     aligner.extend_gap_score = extend_gap
     aligner.substitution_matrix = substitution_matrices.load(matrix)
