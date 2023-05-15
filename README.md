@@ -234,6 +234,7 @@ Step 11: View all of the available substitution matrices.
 
 ```Python
 def matrix():
+    # Can be used in possible_pairwise_alignment and pairwise_alignment functions
     matrix_list = substitution_matrices.load()
     print('The following pre-defined matrices of', ', '.join(matrix_list), 'are available.')
 ```
