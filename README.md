@@ -216,6 +216,7 @@ Step 10: Retrieve the desired RefSeq sequences from NCBI and save it to a fasta 
 # This function is called twice (1 per different species)
 def ref_seq_sequence(email, db_type, id, file_name):
     Entrez.email = email
+    # db can be nucleotide or protein and rettype can be fasta or gb
     net_handle = Entrez.efetch(db=db_type, id=id, rettype='fasta', retmode='text')
     out_handle = open(file_name, "w")
     out_handle.write(net_handle.read())
