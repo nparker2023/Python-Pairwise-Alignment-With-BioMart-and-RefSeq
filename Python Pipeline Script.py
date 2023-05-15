@@ -155,6 +155,7 @@ def ref_seq_sequence(email, db_type, id, file_name):
     # Email address entered in order to use package and access RefSeq
     Entrez.email = email
     # Specified RefSeq is retrieved
+    # db can be nucleotide or protein and rettype can be fasta or gb
     net_handle = Entrez.efetch(db=db_type, id=id, rettype='fasta', retmode='text')
     # RefSeq is saved and written to file
     out_handle = open(file_name, "w")
@@ -166,6 +167,7 @@ def ref_seq_sequence(email, db_type, id, file_name):
 # Shows all the available substitution matrices
 def matrix():
     # List all possible substitution matrices is made
+    # Can be used in possible_pairwise_alignment and pairwise_alignment functions
     matrix_list = substitution_matrices.load()
     print('The following pre-defined matrices of', ', '.join(matrix_list), 'are available.')
 
@@ -174,6 +176,7 @@ def matrix():
 def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
     aligner = Align.PairwiseAligner()
     # Values for open and extended gaps are set
+    # Values should be entered as negative integers
     aligner.open_gap_score = open_gap
     aligner.extend_gap_score = extend_gap
     # Substitution matrix is selected
@@ -190,6 +193,7 @@ def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
 def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, alignment):
     aligner = Align.PairwiseAligner()
     # Values for open and extended gaps are set
+    # Values should be entered as negative integers
     aligner.open_gap_score = open_gap
     aligner.extend_gap_score = extend_gap
     # Substitution matrix is selected
