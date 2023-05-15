@@ -198,6 +198,7 @@ Step 9: Filter species datasets to get a gene of interest and save to a csv file
 ```Python
 # This function is called twice (1 per different species)
 def ref_seq_list(file_name, gene, column_name, name):
+    # Uses files created from gene_ontology_filter
     file = pd.read_csv(file_name)
     filtered = file.loc[:, [column_name, "Gene_name"]]
     filtered.drop_duplicates(keep='first', inplace=True)
