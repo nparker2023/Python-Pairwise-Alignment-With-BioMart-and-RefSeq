@@ -35,7 +35,7 @@ def mart_finder(file_name_1):
 ```
 When this function is called, it should output a file that looks similar to the one below.
 
-<img src="output_files/mart_output.png"  width="268.5" height="165">
+<img src="output_file_photos/mart_output.png"  width="268.5" height="165">
 
 ## BioMart Ensembl Databases 
 
@@ -51,7 +51,7 @@ def database_finder(mart_name, file_name_2):
 
 When this function is called, it should output a file that looks similar to the one below.
 
-<img src="output_files/database_output.png" width="544.5" height="520.5">
+<img src="output_file_photos/database_output.png" width="544.5" height="520.5">
 
 ## Filters and Attributes For a Specific BioMart Ensembl Database
 
@@ -74,9 +74,9 @@ def filters_attributes(species, file_1, file_2):
 
 When this function is called, it should output attribute and filter files that look similar to the ones below.
 
-<img src="output_files/attributes_output.png">
+<img src="output_file_photos/attributes_output.png">
 
-<img src="output_files/filters_output.png" width="675" height="487.5">
+<img src="output_file_photos/filters_output.png" width="675" height="487.5">
 
 
 ## Gather Data 
@@ -101,7 +101,7 @@ def dataset_retrieve(species, chrom, file_name):
 
 When this function is called, it should output a file that looks similar to the one below.
 
-<img src="output_files/query_output.png">
+<img src="output_file_photos/query_output.png">
 
 
 Step 6: Find all the homologs for the two species of interest in order to make a gene list.
