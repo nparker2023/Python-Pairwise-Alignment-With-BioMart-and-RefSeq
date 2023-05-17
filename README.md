@@ -156,9 +156,9 @@ def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, fil
 
 When these functions are called, they should output files similar to the ones shown in the following images. The following images show a database and gene list before and after filtering. Most noticeably, the filtered files have fewer rows than the non-filtered files.
 
-<img src="output_files/dataset_filter.png" width="640" height="360">
+<img src="output_file-photos/dataset_filter.png" width="640" height="360">
 
-<img src="output_files/gene_list_filter.png" width="640" height="360">
+<img src="output_file-photos/gene_list_filter.png" width="640" height="360">
 
 ```Python
 # First species dataset is updated to reflect filtered second species dataset
@@ -173,7 +173,7 @@ def dataset_1_final_filter(species, gene_list, file_name):
 ```
 When this function is called, it should output a file similar to the one shown in the following image. The following image show a database before and after filtering. Similar to the previous two functions, the filtered dataset has fewer rows than the non-filtered dataset.
 
-<img src="output_files/dataset_1_final_filter.png" width="640" height="360">
+<img src="output_file_photos/dataset_1_final_filter.png" width="640" height="360">
 
 ## Filter Data By Gene Ontology
 
@@ -190,7 +190,7 @@ def gene_ontology_filter(file, go_term, go_name_filter):
 
 When this function is called, it should output a file that looks similar to the one below.
 
-<img src="output_files/gene_ontology_output.png">
+<img src="output_file_photos/gene_ontology_output.png">
 
 ## Select Specified RefSeq
 
@@ -210,7 +210,7 @@ def ref_seq_list(file_name, gene, column_name, name):
 
 When this function is called, it should output a file that looks similar to the one below.
 
-<img src="output_files/refseq_list.png" width="236.25" height="351.75">
+<img src="output_file_photos/refseq_list.png" width="236.25" height="351.75">
 
 Step 10: Retrieve the desired RefSeq sequences from NCBI and save it to a fasta file.
 
@@ -228,7 +228,7 @@ def ref_seq_sequence(email, db_type, id, file_name):
 
 When this function is called, it should output a file that looks similar to the one below.
 
-<img src="output_files/refseq_fasta_output.png" width="594.75" height="681">
+<img src="output_file_photos/refseq_fasta_output.png" width="594.75" height="681">
 
 ## Perform Pariwise Alignment
 
@@ -242,7 +242,7 @@ def matrix():
 ```
 When this function is called, it should output a statement that looks similar to the one below.
 
-<img src="output_files/possible_matrix_output.png">
+<img src="output_file_photos/possible_matrix_output.png">
 
 
 Step 12: Find all possible pairwise alignment variations between the two chosen sequences.
@@ -261,7 +261,7 @@ def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
 ```
 When this function is called, it should output a statement that looks similar to the one below.
 
-<img src="output_files/possible_pairwise_statement.png">
+<img src="output_file_photos/possible_pairwise_statement.png">
 
 Step 13: Perform pairwise alignment between two different sequences and save the results to a txt file.
 
@@ -285,7 +285,7 @@ def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, 
 ```
 When this function is called, it should output a file that looks similar to the one below.
 
-<img src="output_files/pairwise_alignment_output.png" width="600" height="600">
+<img src="output_file_photos/pairwise_alignment_output.png" width="600" height="600">
 
 ## Function Arguments
 
