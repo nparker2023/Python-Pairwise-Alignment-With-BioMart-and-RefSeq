@@ -6,7 +6,6 @@ The following tutorial gives a step-by-step guide on how to successfully use the
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1pH4O5FfuRbRmJvIbEOK8DeyZAchO6B_T?usp=sharing)
 
-
 ## Requirements
 
 Step 1: Install and load all of the necessary packages in order for this pipeline to run successfully.
@@ -77,7 +76,6 @@ When this function is called, it should output attribute and filter files that l
 <img src="output_file_photos/attributes_output.png">
 
 <img src="output_file_photos/filters_output.png" width="675" height="487.5">
-
 
 ## Gather Data 
 
