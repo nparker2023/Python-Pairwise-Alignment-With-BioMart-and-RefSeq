@@ -122,7 +122,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Filter Data 
 
-Step 7: Filter the datasets so that they relflect the genes present on the gene list. These updated datasets can be saved to a csv file.
+Step 7: Filter the datasets so that they relflect the genes present on the gene list. These updated datasets can be saved to csv files.
 
 ```Python
 # Queries are filtered out if they don't appear on the gene list for the first species dataset
@@ -154,7 +154,7 @@ def gene_list_dataset_2_filter(species, gene_list, column_name, file_name_1, fil
     dataset_query_2.to_csv(file_name_2, index=False)
 ```
 
-When these functions are called, they should output files similar to the ones shown in the following images. The following images show a database and gene list before and after filtering. Most noticeably, the filtered files have fewer rows than the non-filtered files.
+When these functions are called, they should output files similar to the ones shown in the following images. The following images show a database and gene list before and after filtering. Most noticeably, the filtered files have fewer rows than the non-filtered files. 
 
 <img src="output_file_photos/dataset_filter.png" width="640" height="360">
 
