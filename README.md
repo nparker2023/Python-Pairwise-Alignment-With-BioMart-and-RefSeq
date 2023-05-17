@@ -2,7 +2,7 @@
 
 ## Overview
 
-The following tutorial gives a step by step guide on how to successfully use the pipeline in order to get the desired results. A more in depth and commentated script for this pipeline can be found in Google Colab as a .ipynb file by clicking on the badge. The script has also been provided as a .py file and can be found above if running on another IDE besides Google Collab. Since this is a tutorial, the follow code is not resolute , and is capable of being changed or altered in order to include different attributes, filters, or databases.
+The following tutorial gives a step-by-step guide on how to successfully use the pipeline in order to get the desired results. A more in-depth and commented script for this pipeline can be found in Google Colab as an .ipynb file by clicking on the badge. The script has also been provided as a .py file, which can be found above if running on another IDE besides Google Collab. Since this is a tutorial, the following code is not definitive and is capable of being changed or altered in order to include different attributes, filters, or databases.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1pH4O5FfuRbRmJvIbEOK8DeyZAchO6B_T?usp=sharing)
 
@@ -39,7 +39,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## BioMart Ensembl Databases 
 
-Step 3: After sellecting a particular mart, use it to access all its corresponding BioMart Ensembl databases. All of the available datasets can be accessed as a list and saved to a csv file. 
+Step 3: After selecting a particular mart, use it to access all its corresponding BioMart Ensembl databases. All of the available datasets can be accessed as a list and saved to a csv file.
 
 ```Python
 def database_finder(mart_name, file_name_2):
@@ -55,7 +55,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Filters and Attributes For a Specific BioMart Ensembl Database
 
-Step 4: Find the filters and attributes for a specific database. The filters and attributtes will vary to a degree depending on the dataset selected. All of the available filters and attributes for a particular species dataset can be accessed and saved to csv files.
+Step 4: Find the filters and attributes for a specific database. The filters and attributes will vary to a degree depending on the dataset selected. All of the available filters and attributes for a particular species dataset can be accessed and saved to csv files.
 
 ```Python
 # Filters and attributes get their own file
@@ -103,7 +103,6 @@ When this function is called, it should output a file that looks similar to the 
 
 <img src="output_file_photos/query_output.png">
 
-
 Step 6: Find all the homologs for the two species of interest in order to make a gene list.
 
 ```Python
@@ -122,9 +121,9 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Filter Data 
 
-Step 7: Filter the datasets so that they relflect the genes present on the gene list. These updated datasets can be saved to csv files.
+Step 7: Filter the datasets so that they reflect the genes present on the gene list. These updated datasets can be saved as csv files.
 
-Note: The database images shown for this section are screenshots and don't show all of the information. 
+Note: The database images shown for this section are screenshots and don't show all of the information. Their main purpose is to show the successful functionality of the functions in regards to data filtering.
 
 ```Python
 # Queries are filtered out if they don't appear on the gene list for the first species dataset
@@ -173,7 +172,7 @@ def dataset_1_final_filter(species, gene_list, file_name):
     dataset_query = dataset.query("Gene_name in @list_1")
     dataset_query.to_csv(file_name, index=False)
 ```
-When this function is called, it should output a file similar to the one shown in the following image. The following image show a database before and after filtering. Similar to the previous two functions, the filtered dataset has fewer rows than the non-filtered dataset.
+When this function is called, it should output a file similar to the one shown in the following image. The following image shows a database before and after filtering. Similar to the previous two functions, the filtered dataset has fewer rows than the non-filtered dataset.
 
 <img src="output_file_photos/dataset_1_final_filter.png" width="640" height="360">
 
@@ -214,7 +213,7 @@ When this function is called, it should output a file that looks similar to the 
 
 <img src="output_file_photos/refseq_list.png" width="236.25" height="351.75">
 
-Step 10: Retrieve the desired RefSeq sequences from NCBI and save it to a fasta file.
+Step 10: Retrieve the desired RefSeq sequences from NCBI and save them to a fasta file.
 
 ```Python
 # This function is called twice (1 per different species)
