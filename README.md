@@ -118,7 +118,7 @@ def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
 ```
 When this function is called, it should output a file that looks similar to the one below.
 
-<img src="output_files/gene_homolog_output.png" width="489" height="525">
+<img src="output_file_photos/gene_homolog_output.png" width="489" height="525">
 
 ## Filter Data 
 
