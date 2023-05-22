@@ -107,6 +107,7 @@ Step 6: Find all the homologs for the two species of interest in order to make a
 ```Python
 def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
     species_dataset = Dataset(name=species_1, host='http://www.ensembl.org')
+    # Attributes include gene name and ID for species_1, and ID and gene name for corresponding homolog species
     gene_list_query = species_dataset.query(
         attributes=['ensembl_gene_id', 'external_gene_name', species_2_id, species_2_gene_name],
         filters={'chromosome_name': [chrom]})
