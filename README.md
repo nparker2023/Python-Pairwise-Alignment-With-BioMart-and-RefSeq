@@ -87,7 +87,7 @@ Step 5: Query data from a particular dataset based on specific attributes and fi
 # This function is called twice (1 per different species)
 def dataset_retrieve(species, chrom, file_name):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
-    # Attributes include gene name and ID for species_1, and ID and gene name for corresponding homolog species
+     # Attributes are specified
     species_query = species_dataset.query(
         attributes=['refseq_mrna', 'refseq_peptide', 'ensembl_gene_id', 'external_gene_name', 'description',
                     'start_position', 'end_position', 'strand', 'chromosome_name', 'name_1006'],
