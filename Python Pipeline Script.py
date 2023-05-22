@@ -20,6 +20,7 @@ def mart_finder(file_name_1):
 
 
 # Finds all BioMart Ensembl databases based on specified mart
+# A database represents a species
 def database_finder(mart_name, file_name_2):
     server = Server(host='http://www.ensembl.org')
     mart = server[mart_name]
