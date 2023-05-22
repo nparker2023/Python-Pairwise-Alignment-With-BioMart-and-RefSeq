@@ -41,6 +41,7 @@ When this function is called, it should output a file that looks similar to the 
 Step 3: After selecting a particular mart, use it to access all its corresponding BioMart Ensembl databases. All of the available datasets can be accessed as a list and saved to a csv file.
 
 ```Python
+# A database represents a species
 def database_finder(mart_name, file_name_2):
     server = Server(host='http://www.ensembl.org')
     mart = server[mart_name]
