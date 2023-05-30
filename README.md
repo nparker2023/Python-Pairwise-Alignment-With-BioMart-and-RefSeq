@@ -38,7 +38,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Ensembl BioMart Databases 
 
-Step 3: After selecting a particular mart, use it to access all its corresponding Ensembl ioMart databases. All of the available datasets can be accessed as a list and saved to a csv file.
+Step 3: After selecting a particular mart, use it to access all its corresponding Ensembl BioMart databases. All of the available datasets can be accessed as a list and saved to a csv file.
 
 ```Python
 # A database represents a species
