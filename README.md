@@ -36,9 +36,9 @@ When this function is called, it should output a file that looks similar to the 
 
 <img src="output_file_photos/mart_output.png"  width="268.5" height="165">
 
-## BioMart Ensembl Databases 
+## Ensembl BioMart Databases 
 
-Step 3: After selecting a particular mart, use it to access all its corresponding BioMart Ensembl databases. All of the available datasets can be accessed as a list and saved to a csv file.
+Step 3: After selecting a particular mart, use it to access all its corresponding Ensembl ioMart databases. All of the available datasets can be accessed as a list and saved to a csv file.
 
 ```Python
 # A database represents a species
@@ -53,7 +53,7 @@ When this function is called, it should output a file that looks similar to the 
 
 <img src="output_file_photos/database_output.png" width="544.5" height="520.5">
 
-## Filters and Attributes For a Specific BioMart Ensembl Database
+## Filters and Attributes For a Specific Ensembl BioMart Database
 
 Step 4: Find the filters and attributes for a specific database. The filters and attributes will vary to a degree depending on the dataset selected. All of the available filters and attributes for a particular species dataset can be accessed and saved to csv files.
 
