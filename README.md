@@ -24,7 +24,7 @@ from Bio.Align import substitution_matrices
 ```
 ## Selecting Marts
 
-Step 2: Select a mart in order to access the BioMart Ensembl databases. All of the available marts can be accessed as a list and saved to a csv file. 
+Step 2: Select a mart in order to access the Ensembl BioMart databases. All of the available marts can be accessed as a list and saved to a csv file. 
 
 ```Python
 def mart_finder(file_name_1):
