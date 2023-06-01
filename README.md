@@ -60,7 +60,7 @@ Step 4: Find the filters for a specific database. The filters will vary to a deg
 ```Python
 # Filters get their own file
 # This function is called twice (1 per different species)
-def filters(species, file_1):
+def dataset_filters(species, file_1):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
     list_1 = species_dataset.filters
     with open(file_1, 'w') as f:
@@ -77,7 +77,7 @@ Step 5: Find the attributes for a specific database. The attributes will vary to
 ```Python
 # Attributes get their own file
 # This function is called twice (1 per different species)
-def attributes(species, file_2):
+def dataset_attributes(species, file_2):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
     list_2 = species_dataset.attributes
     with open(file_2, 'w') as f:
@@ -307,10 +307,10 @@ Step 15: Call the functions in order to implement the pipeline and get the resul
 if __name__ == '__main__':
     mart_finder('mart_list.csv')
     database_finder('ENSEMBL_MART_ENSEMBL', 'database_list.csv')
-    filters('hsapiens_gene_ensembl', 'h_filter.csv')
-    filters('mmusculus_gene_ensembl', 'm_filter.csv')
-    attributes('hsapiens_gene_ensembl', 'h_attrib.csv')
-    attributes('mmusculus_gene_ensembl', 'm_attrib.csv')
+    dataset_filters('hsapiens_gene_ensembl', 'h_filter.csv')
+    dataset_filters('mmusculus_gene_ensembl', 'm_filter.csv')
+    dataset_attributes('hsapiens_gene_ensembl', 'h_attrib.csv')
+    dataset_attributes('mmusculus_gene_ensembl', 'm_attrib.csv')
     dataset_retrieve('hsapiens_gene_ensembl', '5', 'species_1.csv')
     dataset_retrieve('mmusculus_gene_ensembl', '18', 'species_2.csv')
     gene_list('hsapiens_gene_ensembl', '5', 'mmusculus_homolog_ensembl_gene', 'mmusculus_homolog_associated_gene_name',
