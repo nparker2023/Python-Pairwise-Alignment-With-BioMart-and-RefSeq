@@ -58,25 +58,34 @@ When this function is called, it should output a file that looks similar to the 
 Step 4: Find the filters and attributes for a specific database. The filters and attributes will vary to a degree depending on the dataset selected. All of the available filters and attributes for a particular species dataset can be accessed and saved to csv files.
 
 ```Python
-# Filters and attributes get their own file
+# Filters get their own file
 # This function is called twice (1 per different species)
-def filters_attributes(species, file_1, file_2):
+def filters(species, file_1):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
     list_1 = species_dataset.filters
     with open(file_1, 'w') as f:
         for item in list_1.keys():
             f.write("%s,%s\n" % (item, list_1[item]))
+```  
+ 
+ When this function is called, it should output a filter file that looks similar to the one below.
+ 
+ <img src="output_file_photos/filters_output.png" width="675" height="487.5">
+            
+```Python
+# Attributes get their own file
+# This function is called twice (1 per different species)
+def attributes(species, file_2):
+    species_dataset = Dataset(name=species, host='http://www.ensembl.org')
     list_2 = species_dataset.attributes
     with open(file_2, 'w') as f:
         for item in list_2.keys():
             f.write("%s,%s\n" % (item, list_2[item]))
 ```  
 
-When this function is called, it should output attribute and filter files that look similar to the ones below.
+When this function is called, it should output an attribute file that looks similar to the one below.
 
 <img src="output_file_photos/attributes_output.png">
-
-<img src="output_file_photos/filters_output.png" width="675" height="487.5">
 
 ## Gather Data 
 
@@ -296,8 +305,10 @@ Step 14: Call the functions in order to implement the pipeline and get the resul
 if __name__ == '__main__':
     mart_finder('mart_list.csv')
     database_finder('ENSEMBL_MART_ENSEMBL', 'database_list.csv')
-    filters_attributes('hsapiens_gene_ensembl', 'h_filter.csv', 'h_attrib.csv')
-    filters_attributes('mmusculus_gene_ensembl', 'm_filter.csv', 'm_attrib.csv')
+    filters('hsapiens_gene_ensembl', 'h_filter.csv')
+    filters('mmusculus_gene_ensembl', 'm_filter.csv')
+    attributes('hsapiens_gene_ensembl', 'h_attrib.csv')
+    attributes('mmusculus_gene_ensembl', 'm_attrib.csv')
     dataset_retrieve('hsapiens_gene_ensembl', '5', 'species_1.csv')
     dataset_retrieve('mmusculus_gene_ensembl', '18', 'species_2.csv')
     gene_list('hsapiens_gene_ensembl', '5', 'mmusculus_homolog_ensembl_gene', 'mmusculus_homolog_associated_gene_name',
