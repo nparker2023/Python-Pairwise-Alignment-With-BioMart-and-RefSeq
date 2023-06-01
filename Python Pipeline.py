@@ -31,7 +31,7 @@ def database_finder(mart_name, file_name_2):
 
 # Filters are found for specified species
 # This function is called twice (1 per different species)
-def filters(species, file_1):
+def dataset_filters(species, file_1):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
     # List is made for filters and saved to file
     list_1 = species_dataset.filters
@@ -42,7 +42,7 @@ def filters(species, file_1):
 
 # Attributes are found for specified species
 # This function is called twice (1 per different species)
-def attributes(species, file_2):
+def dataset_attributes(species, file_2):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
     # List is made for attributes and saved to file
     list_2 = species_dataset.attributes
@@ -224,10 +224,10 @@ if __name__ == '__main__':
     # Functions are called to access pipeline
     mart_finder('mart_list.csv')
     database_finder('ENSEMBL_MART_ENSEMBL', 'database_list.csv')
-    filters('hsapiens_gene_ensembl', 'h_filter.csv')
-    filters('mmusculus_gene_ensembl', 'm_filter.csv')
-    attributes('hsapiens_gene_ensembl', 'h_attrib.csv')
-    attributes('mmusculus_gene_ensembl', 'm_attrib.csv')
+    dataset_filters('hsapiens_gene_ensembl', 'h_filter.csv')
+    dataset_filters('mmusculus_gene_ensembl', 'm_filter.csv')
+    dataset_attributes('hsapiens_gene_ensembl', 'h_attrib.csv')
+    dataset_attributes('mmusculus_gene_ensembl', 'm_attrib.csv')
     dataset_retrieve('hsapiens_gene_ensembl', '5', 'species_1.csv')
     dataset_retrieve('mmusculus_gene_ensembl', '18', 'species_2.csv')
     gene_list('hsapiens_gene_ensembl', '5', 'mmusculus_homolog_ensembl_gene', 'mmusculus_homolog_associated_gene_name',
