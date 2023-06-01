@@ -55,7 +55,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Filters and Attributes For a Specific Ensembl BioMart Database
 
-Step 4: Find the filters and attributes for a specific database. The filters and attributes will vary to a degree depending on the dataset selected. All of the available filters and attributes for a particular species dataset can be accessed and saved to csv files.
+Step 4: Find the filters for a specific database. The filters will vary to a degree depending on the dataset selected. All of the available filters for a particular species dataset can be accessed and saved to csv files.
 
 ```Python
 # Filters get their own file
@@ -68,9 +68,11 @@ def filters(species, file_1):
             f.write("%s,%s\n" % (item, list_1[item]))
 ```  
  
- When this function is called, it should output a filter file that looks similar to the one below.
+When this function is called, it should output a filter file that looks similar to the one below.
  
- <img src="output_file_photos/filters_output.png" width="675" height="487.5">
+<img src="output_file_photos/filters_output.png" width="675" height="487.5">
+ 
+Step 5: Find the attributes for a specific database. The attributes will vary to a degree depending on the dataset selected. All of the available attributes for a particular species dataset can be accessed and saved to csv files.
             
 ```Python
 # Attributes get their own file
@@ -89,7 +91,7 @@ When this function is called, it should output an attribute file that looks simi
 
 ## Gather Data 
 
-Step 5: Query data from a particular dataset based on specific attributes and filters in order to get specific queries. The queries for a particular species dataset can be saved as a csv file.
+Step 6: Query data from a particular dataset based on specific attributes and filters in order to get specific queries. The queries for a particular species dataset can be saved as a csv file.
 
 ```Python
 # In order to work with the data later on, all blanks must be removed and column names must be written in a way that makes them easy to manipulate.
@@ -111,7 +113,7 @@ When this function is called, it should output a file that looks similar to the 
 
 <img src="output_file_photos/query_output.png">
 
-Step 6: Find all the homologs for the two species of interest in order to make a gene list.
+Step 7: Find all the homologs for the two species of interest in order to make a gene list.
 
 ```Python
 def gene_list(species_1, chrom, species_2_id, species_2_gene_name, file_name):
@@ -130,7 +132,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Filter Data 
 
-Step 7: Filter the datasets so that they reflect the genes present on the gene list. These updated datasets can be saved as csv files.
+Step 8: Filter the datasets so that they reflect the genes present on the gene list. These updated datasets can be saved as csv files.
 
 Note: The database images shown for this section are screenshots and don't show all of the information. Their main purpose is to show the successful functionality of the functions in regards to data filtering.
 
@@ -187,7 +189,7 @@ When this function is called, it should output a file similar to the one shown i
 
 ## Filter Data By Gene Ontology
 
-Step 8: Filter species datasets by gene ontology term and save to a csv file.
+Step 9: Filter species datasets by gene ontology term and save to a csv file.
 
 ```Python
 # This function is called twice (1 per different species)
@@ -204,7 +206,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Select Specified RefSeq
 
-Step 9: Filter species datasets to get a gene of interest and save to a csv file. 
+Step 10: Filter species datasets to get a gene of interest and save to a csv file. 
 
 ```Python
 # This function is called twice (1 per different species)
@@ -222,7 +224,7 @@ When this function is called, it should output a file that looks similar to the 
 
 <img src="output_file_photos/refseq_list.png" width="236.25" height="351.75">
 
-Step 10: Retrieve the desired RefSeq sequences from NCBI and save them to a fasta file.
+Step 11: Retrieve the desired RefSeq sequences from NCBI and save them to a fasta file.
 
 ```Python
 # This function is called twice (1 per different species)
@@ -242,7 +244,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Perform Pariwise Alignment
 
-Step 11: View all of the available substitution matrices. 
+Step 12: View all of the available substitution matrices. 
 
 ```Python
 def matrix():
@@ -255,7 +257,7 @@ When this function is called, it should output a statement that looks similar to
 <img src="output_file_photos/possible_matrix_output.png">
 
 
-Step 12: Find all possible pairwise alignment variations between the two chosen sequences.
+Step 13: Find all possible pairwise alignment variations between the two chosen sequences.
 
 ```Python
 def possible_pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2):
@@ -273,7 +275,7 @@ When this function is called, it should output a statement that looks similar to
 
 <img src="output_file_photos/possible_pairwise_statement.png">
 
-Step 13: Perform pairwise alignment between two different sequences and save the results to a txt file.
+Step 14: Perform pairwise alignment between two different sequences and save the results to a txt file.
 
 ```Python
 def pairwise_alignment(open_gap, extend_gap, matrix, file_1, file_2, file_name, alignment):
@@ -299,7 +301,7 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Function Arguments
 
-Step 14: Call the functions in order to implement the pipeline and get the results that are mentioned above.
+Step 15: Call the functions in order to implement the pipeline and get the results that are mentioned above.
 
 ```Python
 if __name__ == '__main__':
