@@ -132,9 +132,9 @@ When this function is called, it should output a file that looks similar to the 
 
 ## Filter Data 
 
-Step 8: Filter the datasets so that they reflect the genes present on the gene list. These updated datasets can be saved as csv files.
+Step 8: Filter all of the datasets and gene lists so that they are reflective of one another. These updated datasets and gene lists can be saved as csv files.
 
-Note: The database images shown for this section are screenshots and don't show all of the information. Their main purpose is to show the successful functionality of the functions in regards to data filtering.
+Note: The dataset and gene list images shown in this section are screenshots and don't show all of the information. Their main purpose is to show the successful functionality of the functions with regards to data filtering.
 
 ```Python
 # Queries are filtered out if they don't appear on the gene list for the first species dataset
