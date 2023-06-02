@@ -58,7 +58,6 @@ When this function is called, it should output a file that looks similar to the 
 Step 4: Find the filters for a specific database. The filters will vary to a degree depending on the dataset selected. All of the available filters for a particular species dataset can be accessed and saved to csv file.
 
 ```Python
-# Filters are found for specified species
 # This function is called twice (1 per different species)
 def dataset_filters(species, file_1):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
@@ -75,7 +74,6 @@ When this function is called, it should output a filter file that looks similar 
 Step 5: Find the attributes for a specific database. The attributes will vary to a degree depending on the dataset selected. All of the available attributes for a particular species dataset can be accessed and saved to csv file.
             
 ```Python
-# Attributes are found for specified species
 # This function is called twice (1 per different species)
 def dataset_attributes(species, file_2):
     species_dataset = Dataset(name=species, host='http://www.ensembl.org')
