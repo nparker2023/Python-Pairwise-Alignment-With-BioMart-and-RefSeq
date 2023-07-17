@@ -34,7 +34,7 @@ def mart_finder(file_name_1):
 ```
 When this function is called, it should output a file that looks similar to the one below.
 
-<img src="output_file_photos/mart_output.png"  width="268.5" height="165">
+<img src="output_file_photos/mart_output.png"  width="341.25" height="165">
 
 ## Ensembl BioMart Databases 
 
